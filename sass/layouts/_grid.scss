@@ -1,0 +1,39 @@
+.row {
+  max-width: $grid-width;
+  // background-color: #eee;
+  margin: 0 auto;
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
+
+  .col-1-of-2 {
+    display: flex;
+    gap: $gutter-horizontal;
+    justify-content: center;
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+  .col-1-of-3 {
+    display: flex;
+    gap: $gutter-horizontal;
+    @include respond(tab-port) {
+      display: block;
+    }
+  }
+
+  .col-1-of-4 {
+    display: flex;
+    gap: $gutter-horizontal;
+    @include respond(tab-port) {
+      flex-direction: column;
+    }
+  }
+}

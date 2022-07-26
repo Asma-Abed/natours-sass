@@ -1,0 +1,41 @@
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+// Media queries
+// 0 - 600px mobile
+// 600 - 900px tablet portrait
+// 900 - 1200 tablet landscape
+// 1200 - 1800 normal laptops/desktops
+// 1800+ large screens
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == phone) {
+    @media only screen and (max-width: 37.5em) {
+      //600px
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-port) {
+    //900px
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == tab-land) {
+    //1200px
+    @media only screen and (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($breakpoint == big-screen) {
+    //1800px
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    }
+  }
+}
